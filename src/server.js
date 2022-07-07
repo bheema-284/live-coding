@@ -53,9 +53,9 @@ app.use(cors());
 app.use(express.json());
 
 const CartData = require('./Controllers/cart.controller');
-
-app.use('/cart', CartData);
-
+const OrderData = require('./Controllers/order.controller')
+app.use('/items', CartData);
+app.use('/order')
 app.listen(port, async () => {
   await connect();
   console.log("Listining to the  port ", port);
